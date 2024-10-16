@@ -33,115 +33,116 @@
 
 int chdir(const char *path)
 {
-	asm volatile("li a7, %0; ecall; ret;" : : "i" (SYS_chdir));
+	asm volatile("li a7, %0; ecall;" : : "i" (SYS_chdir));
 }
 
 int clone(int (*fn)(void *), void *child_stack, int flags, void *arg, ...)
 {
-	asm volatile("li a7, %0; ecall; ret;" : : "i" (SYS_clone));
+	asm volatile("li a7, %0; ecall;" : : "i" (SYS_clone));
 }
 
 int close(int fd)
 {
-	asm volatile("li a7, %0; ecall; ret;" : : "i" (SYS_close));
+	asm volatile("li a7, %0; ecall;" : : "i" (SYS_close));
 }
 
 int dup(int fd)
 {
-	asm volatile("li a7, %0; ecall; ret;" : : "i" (SYS_dup));
+	asm volatile("li a7, %0; ecall;" : : "i" (SYS_dup));
 }
 
 int exec(const char *path, char *const argv[])
 {
-	asm volatile("li a7, %0; ecall; ret;" : : "i" (SYS_exec));
+	asm volatile("li a7, %0; ecall;" : : "i" (SYS_exec));
 }
 
 void _exit(int code)
 {
-	asm volatile("li a7, %0; ecall; ret;" : : "i" (SYS_exit));
+	asm volatile("li a7, %0; ecall;" : : "i" (SYS_exit));
 }
 
 int fork()
 {
-	asm volatile("li a7, %0; ecall; ret;" : : "i" (SYS_fork));
+	asm volatile("li a7, %0; ecall;" : : "i" (SYS_fork));
 }
 
 int fstat(int fd, struct stat *buf)
 {
-	asm volatile("li a7, %0; ecall; ret;" : : "i" (SYS_fstat));
+	asm volatile("li a7, %0; ecall;" : : "i" (SYS_fstat));
 }
 
 int getcwd(char *buf, int size)
 {
-	asm volatile("li a7, %0; ecall; ret;" : : "i" (SYS_getcwd));
+	asm volatile("li a7, %0; ecall;" : : "i" (SYS_getcwd));
 }
 
 int getpid(void)
 {
-	asm volatile("li a7, %0; ecall; ret;" : : "i" (SYS_getpid));
+	asm volatile("li a7, %0; ecall;" : : "i" (SYS_getpid));
 }
 
 int kill(int pid)
 {
-	asm volatile("li a7, %0; ecall; ret;" : : "i" (SYS_kill));
+	asm volatile("li a7, %0; ecall;" : : "i" (SYS_kill));
 }
 
 int link(const char *oldpath, const char *newpath)
 {
-	asm volatile("li a7, %0; ecall; ret;" : : "i" (SYS_link));
+	asm volatile("li a7, %0; ecall;" : : "i" (SYS_link));
 }
 
 int mkdir(const char *pathname, mode_t mode)
 {
-	asm volatile("li a7, %0; ecall; ret;" : : "i" (SYS_mkdir));
+	asm volatile("li a7, %0; ecall;" : : "i" (SYS_mkdir));
 }
 
 int mknod(const char *pathname, short mode, short dev)
 {
-	asm volatile("li a7, %0; ecall; ret;" : : "i" (SYS_mknod));
+	asm volatile("li a7, %0; ecall;" : : "i" (SYS_mknod));
 }
+
 
 int open(const char *name, int flags, ...)
 {
-	asm volatile("li a7, %0; ecall; ret;" : : "i" (SYS_open));
+	asm volatile("li a7, %0; ecall;" : : "i" (SYS_open));
 }
 
 int pipe(int *pipefd)
 {
-	asm volatile("li a7, %0; ecall; ret;" : : "i" (SYS_pipe));
+	asm volatile("li a7, %0; ecall;" : : "i" (SYS_pipe));
 }
 
 int read(int fd, char *buf, int count)
 {
-	asm volatile("li a7, %0; ecall; ret;" : : "i" (SYS_read));
+	asm volatile("li a7, %0; ecall;" : : "i" (SYS_read));
 }
 
 char* sbrk(int increment)
 {
-	asm volatile("li a7, %0; ecall; ret;" : : "i" (SYS_sbrk));
+	asm volatile("li a7, %0; ecall;" : : "i" (SYS_sbrk));
 }
 
 int sleep(int seconds)
 {
-	asm volatile("li a7, %0; ecall; ret;" : : "i" (SYS_sleep));
+	asm volatile("li a7, %0; ecall;" : : "i" (SYS_sleep));
 }
 
 int unlink(const char *pathname)
 {
-	asm volatile("li a7, %0; ecall; ret;" : : "i" (SYS_unlink));
+	asm volatile("li a7, %0; ecall;" : : "i" (SYS_unlink));
 }
 
 int uptime(void)
 {
-	asm volatile("li a7, %0; ecall; ret;" : : "i" (SYS_uptime));
+	asm volatile("li a7, %0; ecall;" : : "i" (SYS_uptime));
 }
 
 int wait(int *status)
 {
-	asm volatile("li a7, %0; ecall; ret;" : : "i" (SYS_wait));
+	asm volatile("li a7, %0; ecall;" : : "i" (SYS_wait));
 }
 
 int write(int fd, const char *buf, int count)
 {
-	asm volatile("li a7, %0; ecall; ret;" : : "i" (SYS_write));
+	asm volatile("li a7, %0; ecall;" : : "i" (SYS_write));
 }

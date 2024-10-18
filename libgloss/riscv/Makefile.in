@@ -10,7 +10,7 @@ gloss_srcs = \
 
 # Extra files
 
-crt0_asm      = crt0.S
+# crt0_asm      = crt0.S
 
 # Multilib support variables.
 # TOP is used instead of MULTI{BUILD,SRC}TOP.

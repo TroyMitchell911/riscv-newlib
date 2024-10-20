@@ -124,9 +124,9 @@ int fchmod(int fd, mode_t mode);
 int stat(const char *pathname, struct stat *buf);
 int fstat(int fd, struct stat *buf);
 int lstat(const char *pathname, struct stat *buf);
-//int mkdir(const char *pathname, mode_t mode);
+int mkdir(const char *pathname, mode_t mode);
 int mkfifo(const char *pathname, mode_t mode);
-//int mknod(const char *pathname, mode_t mode, dev_t dev);
+int mknod(const char *pathname, mode_t mode, dev_t dev);
 mode_t umask(mode_t mask);
 
 #ifdef __cplusplus

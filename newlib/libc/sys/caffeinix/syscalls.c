@@ -23,10 +23,8 @@
 #define SYS_uptime 14
 #define SYS_open   15
 #define SYS_write  16
-#define SYS_mknod  17
 #define SYS_unlink 18
 #define SYS_link   19
-#define SYS_mkdir  20
 #define SYS_close  21
 #define SYS_clone  120
 #define SYS_getcwd 121
@@ -90,17 +88,6 @@ int link(const char *oldpath, const char *newpath)
 {
 	asm volatile("li a7, %0; ecall;" : : "i" (SYS_link));
 }
-
-int mkdir(const char *pathname, mode_t mode)
-{
-	asm volatile("li a7, %0; ecall;" : : "i" (SYS_mkdir));
-}
-
-int mknod(const char *pathname, short mode, short dev)
-{
-	asm volatile("li a7, %0; ecall;" : : "i" (SYS_mknod));
-}
-
 
 int open(const char *name, int flags, ...)
 {
